@@ -21,9 +21,14 @@ steps:
   inputs:
     version: '5.0.x'
     includePreviewVersions: true # Required for preview versions
-  
+
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
     command: 'build'
     configuration: $(buildConfiguration)
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
+  inputs:
+    command: 'test'
