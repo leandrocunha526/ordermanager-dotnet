@@ -69,7 +69,7 @@ See [LICENSE](LICENSE.md)
 ## Docs
 
 - [IdentityModel](https://identitymodel.readthedocs.io/en/latest/)
-- [SQL Server](https://docs.microsoft.com/en-us/sql/sql-server/?view=sql-server-ver15)
+- [MySQL/MariaDB with Dotnet](https://github.com/PomeloFoundation/Pomelo.EntityFrameworkCore.MySql)
 - [Dotnet](https://docs.microsoft.com/en-us/dotnet/)
 - [JWT](https://jwt.io/)
 - [Auto Mapper](https://docs.automapper.org/en/stable/Getting-started.html)
