@@ -49,7 +49,11 @@ or
 
 ## Instructions to use Docker
 
-[Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-5.0)
+- [Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-5.0)
+
+- [Docker images for MySQL Server](https://hub.docker.com/_/mysql)
+
+- [Docker images for MariaDB Server (fork of the MySQL)](https://hub.docker.com/_/mariadb)
 
 ## Requirements
 
