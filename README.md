@@ -1,12 +1,18 @@
 # Order Manager
 
-## API using Dotnet with JWT and IdentityModel
+## API using Dotnet (cross platform) with JWT and IdentityModel
 
 [![.NET](https://github.com/leandrocunha526/ordermanager-dotnet/actions/workflows/dotnet.yml/badge.svg)](https://github.com/leandrocunha526/ordermanager-dotnet/actions/workflows/dotnet.yml)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fleandrocunha526%2Fordermanager-dotnet.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fleandrocunha526%2Fordermanager-dotnet?ref=badge_shield)
 [![Build Status](https://dev.azure.com/leandrocunha520/ordermanager-dotnet/_apis/build/status/leandrocunha526.ordermanager-dotnet?branchName=main)](https://dev.azure.com/leandrocunha520/ordermanager-dotnet/_build/latest?definitionId=10&branchName=main)
 
 ## Integrated with Azure DevOps
+
+- Use Windows Latest
+
+## GitHub Actions
+
+- Use Ubuntu Latest (LTS current)
 
 ## Description
 
@@ -69,3 +75,4 @@ See [LICENSE](LICENSE.md)
 - [Auto Mapper](https://docs.automapper.org/en/stable/Getting-started.html)
 - [Swagger](https://swagger.io/)
 - [Azure DevOps](https://azure.microsoft.com/pt-br/services/devops/#overview)
+- [Azure Pipelines](https://docs.microsoft.com/pt-br/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops&tabs=dotnetfive)
