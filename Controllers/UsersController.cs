@@ -86,8 +86,8 @@ namespace ordermanager_dotnet.Controllers
 			}
 		}
 
-		//Get (get) users -> https://localhost:5000/api/user
-		[HttpGet]
+		//Get (get) users -> https://localhost:5000/api/users
+		[HttpGet("list")]
 		public IActionResult GetAll()
 		{
 			var user = _userService.GetAll();
@@ -95,7 +95,7 @@ namespace ordermanager_dotnet.Controllers
 			return Ok(model);
 		}
 
-		//Get (get) user by id -> https://localhost:5000/api/user/id
+		//Get (get) user by id -> https://localhost:5000/api/users/id
 		[HttpGet("{id}")]
 		public IActionResult GetById(int id)
 		{
@@ -104,8 +104,8 @@ namespace ordermanager_dotnet.Controllers
 			return Ok(model);
 		}
 
-		//Edit (put) user by id -> https://localhost:5000/api/user/id
-		[HttpPut("{id}")]
+		//Edit (put) user by id -> https://localhost:5000/api/users/id
+		[HttpPut("edit/{id}")]
 		public IActionResult Update(int id, [FromBody] UpdateUserModel model)
 		{
 			var user = _mapper.Map<User>(model);
