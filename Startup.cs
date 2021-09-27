@@ -39,6 +39,7 @@ namespace ordermanager_dotnet
 			services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 			services.AddCors();
 			services.AddControllers();
+			services.AddScoped<IRepository, Repository>();
 			services.AddSwaggerGen(c =>
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "backend", Version = "v1" });
