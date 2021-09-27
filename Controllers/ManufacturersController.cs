@@ -48,7 +48,7 @@ namespace ordermanager_dotnet.Controllers
             try{
                 _repo.Add(model);
                 if(await _repo.SaveChangesAsync()){
-                    return Created($"/api/manufacturers/{model.Id}", model);
+                    return Created($"/api/manufacturers/register/{model.Id}", model);
                 }
             }
             catch(System.Exception){
@@ -67,7 +67,7 @@ namespace ordermanager_dotnet.Controllers
                 _repo.Update(model);
                     if(await _repo.SaveChangesAsync()){
                     manufacturer = await _repo.GetManufacturerAsyncById(ManufacturerId);
-                    return Created($"/api/[controller]/{manufacturer.Id}", manufacturer);
+                    return Created($"/api/[controller]/edit/{manufacturer.Id}", manufacturer);
                 }
             }
             catch(System.Exception){
