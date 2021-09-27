@@ -47,7 +47,7 @@ namespace ordermanager_dotnet.Controllers
             try{
                 _repo.Add(model);
                 if(await _repo.SaveChangesAsync()){
-                    return Created($"/api/models/{model.Id}", model);
+                    return Created($"/api/models/register/{model.Id}", model);
                 }
             }catch(System.Exception){
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
@@ -65,7 +65,7 @@ namespace ordermanager_dotnet.Controllers
                 _repo.Update(modelmachine);
                     if(await _repo.SaveChangesAsync()){
                         model = await _repo.GetModelAsyncById(ModelMachineId, true);
-                        return Created($"/api/models/{modelmachine.Id}", modelmachine);
+                        return Created($"/api/models/edit/{modelmachine.Id}", modelmachine);
                     }
             }catch(System.Exception){
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
