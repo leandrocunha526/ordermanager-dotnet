@@ -16,6 +16,6 @@ namespace ordermanager_dotnet.Models
         [Required]
         public int ModelId {get;set;}
 
-        public Model Models {get;set;}
+        public ModelMachine ModelsMachine {get;set;}
     }
 }
