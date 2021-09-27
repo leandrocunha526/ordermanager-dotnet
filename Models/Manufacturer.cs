@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ordermanager_dotnet.Models
@@ -10,6 +9,5 @@ namespace ordermanager_dotnet.Models
 
         [Required]
         public string Description {get;set;}
-        public List<Model> Models {get;set;}
     }
 }
