@@ -31,3 +31,8 @@ steps:
   displayName: 'dotnet test'
   inputs:
     command: 'test'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+
