@@ -5,6 +5,9 @@
 [![.NET](https://github.com/leandrocunha526/ordermanager-dotnet/actions/workflows/dotnet.yml/badge.svg)](https://github.com/leandrocunha526/ordermanager-dotnet/actions/workflows/dotnet.yml)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fleandrocunha526%2Fordermanager-dotnet.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fleandrocunha526%2Fordermanager-dotnet?ref=badge_shield)
 [![Build Status](https://dev.azure.com/leandrocunha520/ordermanager-dotnet/_apis/build/status/leandrocunha526.ordermanager-dotnet?branchName=main)](https://dev.azure.com/leandrocunha520/ordermanager-dotnet/_build/latest?definitionId=10&branchName=main)
+[![LICENSE](https://img.shields.io/github/license/vitorserrano/task-manager?color=7159C1)](LICENSE.md)
+![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 
 ## Integrated with Azure DevOps
 
