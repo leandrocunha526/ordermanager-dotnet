@@ -41,11 +41,15 @@ or
 
 ## To create migrations
 
-- SQL Server EF Core Migrations: `dotnet ef migrations add InitialCreate`
+- EF Core Migrations: `dotnet ef migrations add InitialMigration`
 
 ## To create tables
 
 `dotnet ef database update`
+
+## Routes
+
+Accessing `http://localhost:5000/swagger/index.html`
 
 ## Instructions to use Docker
 
