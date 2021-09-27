@@ -85,4 +85,4 @@ See [LICENSE](LICENSE.md)
 - [Azure DevOps](https://azure.microsoft.com/pt-br/services/devops/#overview)
 - [Azure Pipelines](https://docs.microsoft.com/pt-br/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops&tabs=dotnetfive)
 
-- [More Microsoft Open Source](https://opensource.microsoft.com/)
+- [Explore Microsoft Open Source projects and iniciative](https://opensource.microsoft.com/)
