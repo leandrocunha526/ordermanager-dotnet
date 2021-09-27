@@ -47,7 +47,7 @@ namespace ordermanager_dotnet.Controllers
             try{
                 _repo.Add(model);
                 if(await _repo.SaveChangesAsync()){
-                    return Created($"/api/machines/{model.Id}", model);
+                    return Created($"/api/machines/register/{model.Id}", model);
                 }
             }
             catch(System.Exception){
@@ -68,7 +68,7 @@ namespace ordermanager_dotnet.Controllers
 
                     if(await _repo.SaveChangesAsync()){
                         machine = await _repo.GetMachineAsyncById(MachineId, true);
-                        return Created($"/api/machines/{machine.Id}", machine);
+                        return Created($"/api/machines/edit/{machine.Id}", machine);
                     }
             }
             catch(System.Exception){
