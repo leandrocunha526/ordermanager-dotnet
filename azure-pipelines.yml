@@ -33,6 +33,7 @@ steps:
     command: 'test'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
   inputs:
     command: 'publish'
 
