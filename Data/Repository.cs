@@ -29,45 +29,37 @@ namespace ordermanager_dotnet.Data
            _context.Update(entity);
         }
 
-        public async Task<Manufacturer[]> GetAllManufacturersAsync(bool includeModel = false)
+        public async Task<Manufacturer[]> GetAllManufacturersAsync()
         {
             IQueryable<Manufacturer> query = _context.Manufacturers;
-            if(includeModel){
-                query = query.Include(mo => mo.Models);
-            }
             query = query.AsNoTracking().OrderBy(manufacturer => manufacturer.Id);
             return await query.ToArrayAsync();
         }
 
-        public async Task<Manufacturer> GetManufacturerAsyncById(int ManufacturerId, bool includeModel)
+        public async Task<Manufacturer> GetManufacturerAsyncById(int ManufacturerId)
         {
             IQueryable<Manufacturer> query = _context.Manufacturers;
-            if(includeModel)
-            {
-                query = query.Include(mo => _context.Models);
-            }
             query = query.AsNoTracking().OrderBy(manufacturer => manufacturer.Id).Where(manufacturer => manufacturer.Id == ManufacturerId);
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task<Model[]> GetAllModelAsync(bool includeManufacturer = false)
+        public async Task<ModelMachine[]> GetAllModelAsync(bool includeManufacturer = false)
         {
-            IQueryable<Model> query = _context.Models;
+            IQueryable<ModelMachine> query = _context.ModelsMachine;
             if(includeManufacturer){
                 query = query.Include(ma => ma.Manufacturers);
-                query = query.Include(mac => mac.Machines);
             }
             query = query.AsNoTracking().OrderBy(model => model.Id);
             return await query.ToArrayAsync();
         }
 
-        public async Task<Model> GetModelAsyncById(int ModelId, bool includeManufacturer)
+        public async Task<ModelMachine> GetModelAsyncById(int ModelMachineId, bool includeManufacturer)
         {
-            IQueryable<Model> query = _context.Models;
+            IQueryable<ModelMachine> query = _context.ModelsMachine;
             if(includeManufacturer){
                 query = query.Include(ma => ma.Manufacturers);
             }
-            query = query.AsNoTracking().OrderBy(model => model.Id).Where(model => model.Id == ModelId);
+            query = query.AsNoTracking().OrderBy(model => model.Id).Where(model => model.Id == ModelMachineId);
             return await query.FirstOrDefaultAsync();
         }
 
@@ -76,23 +68,68 @@ namespace ordermanager_dotnet.Data
             return (await _context.SaveChangesAsync() > 0);
         }
 
-        public async Task<Machine[]> GetAllMachineAsync(bool includeModel = false)
+        public async Task<Machine[]> GetAllMachineAsync(bool includeModelMachine = false)
         {
             IQueryable<Machine> query= _context.Machines;
-            if(includeModel){
-                query = query.Include(mo => mo.Models);
-            }
             query = query.AsNoTracking().OrderBy(machine => machine.Id);
             return await query.ToArrayAsync();
         }
 
-        public async Task<Machine> GetMachineAsyncById(int MachineId, bool includeModel)
+        public async Task<Machine> GetMachineAsyncById(int MachineId, bool includeModelMachine)
         {
             IQueryable<Machine> query = _context.Machines;
-            if(includeModel){
-                query = query.Include(mo => mo.Models);
+            if(includeModelMachine){
+                query = query.Include(modelmachine => modelmachine.ModelsMachine);
             }
             query = query.AsNoTracking().OrderBy(machine => machine.Id).Where(machine => machine.Id == MachineId);
+            return await query.FirstOrDefaultAsync();
+        }
+
+        public async Task<Employee[]> GetAllEmployeesAsync()
+        {
+            IQueryable<Employee> query = _context.Employees;
+            query = query.AsNoTracking().OrderBy(employee => employee.Id);
+            return await query.ToArrayAsync();
+        }
+
+        public async Task<Employee> GetEmployeeAsyncById(int EmployeeId)
+        {
+            IQueryable<Employee> query = _context.Employees;
+            query = query.AsNoTracking().OrderBy(employee => employee.Id).Where(employee => employee.Id == EmployeeId);
+            return await query.FirstOrDefaultAsync();
+        }
+
+        public async Task<Provider[]> GetAllProvidersAsync()
+        {
+            IQueryable<Provider> query = _context.Providers;
+            query = query.AsNoTracking().OrderBy(provider => provider.Id);
+            return await query.ToArrayAsync();
+        }
+
+        public async Task<Provider> GetProviderAsyncById(int ProviderId)
+        {
+            IQueryable<Provider> query = _context.Providers;
+            query = query.AsNoTracking().OrderBy(provider => provider.Id).Where(provider => provider.Id == ProviderId);
+            return await query.FirstOrDefaultAsync();
+        }
+
+        public async Task<AgriculturalInput[]> GetAllAgriculturalInputAsync(bool includeProvider = false)
+        {
+            IQueryable<AgriculturalInput> query= _context.AgriculturalInputs;
+            if(includeProvider){
+                query = query.Include(provider => provider.Providers);
+            }
+            query = query.AsNoTracking().OrderBy(agriculturalinput => agriculturalinput.Id);
+            return await query.ToArrayAsync();
+        }
+
+        public async Task<AgriculturalInput> GetAgriculturalInputAsyncById(int AgriculturalInputId, bool includeProvider)
+        {
+            IQueryable<AgriculturalInput> query = _context.AgriculturalInputs;
+            if(includeProvider){
+                query = query.Include(provider => provider.Providers);
+            }
+            query = query.AsNoTracking().OrderBy(agriculturalinput => agriculturalinput.Id).Where(agriculturalinput => agriculturalinput.Id == AgriculturalInputId);
             return await query.FirstOrDefaultAsync();
         }
     }

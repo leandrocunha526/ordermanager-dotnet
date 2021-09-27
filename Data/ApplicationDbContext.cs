@@ -11,8 +11,14 @@ namespace ordermanager_dotnet.Data
 
         public DbSet<Manufacturer> Manufacturers {get;set;}
 
-        public DbSet<Model> Models {get;set;}
+        public DbSet<ModelMachine> ModelsMachine {get;set;}
 
         public DbSet<Machine> Machines {get;set;}
+
+        public DbSet<Employee> Employees {get;set;}
+
+        public DbSet<Provider> Providers {get;set;}
+
+        public DbSet<AgriculturalInput> AgriculturalInputs {get;set;}
     }
 }

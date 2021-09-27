@@ -11,15 +11,27 @@ namespace ordermanager_dotnet.Data
         Task<bool> SaveChangesAsync();
 
         //Manufacturer
-        Task<Manufacturer[]> GetAllManufacturersAsync(bool includeModel);
-        Task<Manufacturer> GetManufacturerAsyncById(int ManufacturerId, bool includeModel);
+        Task<Manufacturer[]> GetAllManufacturersAsync();
+        Task<Manufacturer> GetManufacturerAsyncById(int ManufacturerId);
 
         //Model
-        Task<Model[]> GetAllModelAsync(bool includeManufacturer);
-        Task<Model> GetModelAsyncById(int ModelId, bool includeManufacturer);
+        Task<ModelMachine[]> GetAllModelAsync(bool includeManufacturer);
+        Task<ModelMachine> GetModelAsyncById(int ModelMachineId, bool includeManufacturer);
 
         //Machine
-        Task<Machine[]> GetAllMachineAsync(bool includeModel);
-        Task<Machine> GetMachineAsyncById(int MachineId, bool includeModel);
+        Task<Machine[]> GetAllMachineAsync(bool includeModelMachine);
+        Task<Machine> GetMachineAsyncById(int MachineId, bool includeModelMachine);
+
+        //Employee
+        Task<Employee[]> GetAllEmployeesAsync();
+        Task<Employee> GetEmployeeAsyncById(int EmployeeId);
+
+        //Provider
+        Task<Provider[]> GetAllProvidersAsync();
+        Task<Provider> GetProviderAsyncById(int ProviderId);
+
+        //AgriculturalInput
+        Task<AgriculturalInput[]> GetAllAgriculturalInputAsync(bool includeProvider);
+        Task<AgriculturalInput> GetAgriculturalInputAsyncById(int AgriculturalInputId, bool includeProvider);
     }
 }
