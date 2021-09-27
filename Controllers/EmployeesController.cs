@@ -71,7 +71,7 @@ namespace ordermanager_dotnet.Controllers
 
                 if(await _repository.SaveChangesAsync()){
                     employee = await _repository.GetEmployeeAsyncById(EmployeeId);
-                    return Created("$/api/employees/edit/{model.Id}", model);
+                    return Created("$/api/employees/edit/{model.Id}", employee);
                 }
             }
             catch(System.Exception){
