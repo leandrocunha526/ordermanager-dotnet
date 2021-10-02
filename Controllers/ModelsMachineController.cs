@@ -56,7 +56,7 @@ namespace ordermanager_dotnet.Controllers
             return BadRequest();
         }
 
-        [HttpPut("/edit/{ModelId}")]
+        [HttpPut("edit/{ModelId}")]
         public async Task<IActionResult> Put(int ModelMachineId, ModelMachine model){
             try{
                 var modelmachine = await _repo.GetModelAsyncById(ModelMachineId, false);

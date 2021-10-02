@@ -59,7 +59,7 @@ namespace ordermanager_dotnet.Controllers
             return BadRequest();
         }
 
-        [HttpPut("/edit/{ProviderId}")]
+        [HttpPut("edit/{ProviderId}")]
         public async Task<IActionResult> Put(int ProviderId, Provider model){
             try{
                 var provider = await _repository.GetProviderAsyncById(ProviderId);
