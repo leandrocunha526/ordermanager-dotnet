@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace ordermanager_dotnet.Models
 {
@@ -18,5 +19,8 @@ namespace ordermanager_dotnet.Models
 
         [Required]
         public string Phone {get;set;}
+
+        [Required]
+        public DateTime Birthday {get;set;}
     }
 }
