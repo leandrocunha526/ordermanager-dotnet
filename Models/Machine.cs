@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ordermanager_dotnet.Models
@@ -12,6 +13,9 @@ namespace ordermanager_dotnet.Models
 
         [Required]
         public int Year {get;set;}
+
+        [Required]
+        public DateTime AcquisitionDate {get;set;}
 
         [Required]
         public int ModelId {get;set;}
