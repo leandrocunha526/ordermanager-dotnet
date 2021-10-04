@@ -74,7 +74,7 @@ namespace ordermanager_dotnet.Controllers
             return BadRequest();
         }
 
-        [HttpDelete]
+        [HttpDelete("{ModelMachineId}")]
         public async Task<IActionResult> Delete(int ModelMachineId){
             try{
                 var modelmachine = await _repo.GetModelAsyncById(ModelMachineId, false);
