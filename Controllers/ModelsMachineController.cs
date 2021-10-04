@@ -31,7 +31,7 @@ namespace ordermanager_dotnet.Controllers
             }
         }
 
-        [HttpGet("{ModelMachineId)}")]
+        [HttpGet("{ModelMachineId}")]
         public async Task<IActionResult> GetModelById(int ModelMachineId){
             try{
                 var result = await _repo.GetModelAsyncById(ModelMachineId, true);
