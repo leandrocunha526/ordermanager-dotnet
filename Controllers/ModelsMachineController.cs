@@ -31,10 +31,10 @@ namespace ordermanager_dotnet.Controllers
             }
         }
 
-        [HttpGet("{ModelId}")]
-        public async Task<IActionResult> GetModelById(int ModelId){
+        [HttpGet("{ModelMachineId)}")]
+        public async Task<IActionResult> GetModelById(int ModelMachineId){
             try{
-                var result = await _repo.GetModelAsyncById(ModelId, true);
+                var result = await _repo.GetModelAsyncById(ModelMachineId, true);
                 return Ok(result);
             }catch(System.Exception){
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
@@ -56,7 +56,7 @@ namespace ordermanager_dotnet.Controllers
             return BadRequest();
         }
 
-        [HttpPut("edit/{ModelId}")]
+        [HttpPut("edit/{ModelMachineId}")]
         public async Task<IActionResult> Put(int ModelMachineId, ModelMachine model){
             try{
                 var modelmachine = await _repo.GetModelAsyncById(ModelMachineId, false);
