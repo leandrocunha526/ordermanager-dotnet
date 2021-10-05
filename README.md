@@ -77,6 +77,10 @@ Accessing `http://localhost:5000/swagger/index.html`
 
 - [Docker images for MariaDB Server (fork of the MySQL)](https://hub.docker.com/_/mariadb)
 
+## Frontend
+
+- [Order manager](https://github.com/leandrocunha526/ordermanager)
+
 ## Requirements
 
 - MySQL Server (version 8.x)
