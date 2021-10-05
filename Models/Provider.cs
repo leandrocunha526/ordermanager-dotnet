@@ -26,5 +26,7 @@ namespace ordermanager_dotnet.Models
         public string Country {get;set;}
         [Required]
         public int Zipcode {get;set;}
+        [Required]
+        public int EstablishmentNumber {get;set;}
     }
 }
