@@ -15,6 +15,9 @@ namespace ordermanager_dotnet.Models
         public int Year {get;set;}
 
         [Required]
+        public string Implement{get;set;}
+
+        [Required]
         public DateTime AcquisitionDate {get;set;}
 
         [Required]
