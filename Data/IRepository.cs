@@ -33,5 +33,9 @@ namespace ordermanager_dotnet.Data
         //AgriculturalInput
         Task<AgriculturalInput[]> GetAllAgriculturalInputAsync(bool includeProvider);
         Task<AgriculturalInput> GetAgriculturalInputAsyncById(int AgriculturalInputId, bool includeProvider);
+
+        //Order
+        Task<Order[]> GetAllOrderAsync(bool includeMachine, bool includeEmployee, bool includeAgriculturalInput);
+        Task<Order> GetOrderAsyncById(int OrderId, bool includeMachine, bool includeEmployee, bool includeAgriculturalInput);
     }
 }

@@ -20,5 +20,7 @@ namespace ordermanager_dotnet.Data
         public DbSet<Provider> Providers {get;set;}
 
         public DbSet<AgriculturalInput> AgriculturalInputs {get;set;}
+
+        public DbSet<Order> Orders {get;set;}
     }
 }
