@@ -48,6 +48,7 @@ Package|Licenses
 ## SGBD
 
 - MySQL Server (Tested with version 8.x)
+- MariaDB Server (Tested with version 10.x)
 
 ## To run
 
