@@ -79,7 +79,7 @@ namespace ordermanager_dotnet.Controllers
             return BadRequest();
         }
 
-        [HttpDelete("AgriculturalInputId")]
+        [HttpDelete("{AgriculturalInputId}")]
         public async Task<IActionResult> Delete(int AgriculturalInputId){
             try{
                 var agriculturalinput = await _repo.GetAgriculturalInputAsyncById(AgriculturalInputId, false);
