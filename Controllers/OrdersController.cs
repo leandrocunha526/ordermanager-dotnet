@@ -78,7 +78,7 @@ namespace ordermanager_dotnet.Controllers
             return BadRequest();
         }
 
-        [HttpDelete("OrderId")]
+        [HttpDelete("{OrderId}")]
         public async Task<IActionResult> Delete(int OrderId){
             try{
                 var order = await _repository.GetOrderAsyncById(OrderId, false, false, false);
