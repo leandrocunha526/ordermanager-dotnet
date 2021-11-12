@@ -8,6 +8,14 @@ namespace ordermanager_dotnet.Models
         [Required]
         public int Id { get; set; }
 
+        //Id agro register
+        [Required]
+        public string RegisterCode {get;set;}
+
+        //Serial number of machine
+        [Required]
+        public string SerialNumber {get;set;}
+
         [Required]
         public string Type { get; set; }
 
