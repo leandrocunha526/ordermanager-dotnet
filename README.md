@@ -24,7 +24,7 @@ To help manage:
 - Warehouse,
 - Culminate business intelligence,
 - Statistics,
-- Data warehouse to assist in decision making within the company with agricultural inputs, suppliers, work orders with registration and scheduling, machines, brands and models.
+- To assist in decision making within the company with agricultural inputs, suppliers, work orders with registration and scheduling, machines, brands and models.
 
 ## Direct Dependencies
 
