@@ -43,7 +43,7 @@ Package|Licenses
 **[System.IdentityModel.Tokens.Jwt (6.12.2)](#System.IdentityModel.Tokens.Jwt-6-12-2)**|MIT
 ## Version
 
-- Dotnet 5.0
+- Dotnet 6.0 (migration in progress)
 
 ## SGBD
 
