@@ -18,6 +18,9 @@ namespace ordermanager_dotnet.Models
         public DateTime StartDate {get;set;}
 
         [Required]
+        public string Status {get;set;}
+
+        [Required]
         public float Price {get;set;}
 
         [Required]
