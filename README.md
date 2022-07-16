@@ -28,7 +28,7 @@ To help manage:
 
 ## Version
 
-- Dotnet 6.0 LTS (migration in progress)
+- Dotnet 6.0 LTS
 
 ## SGBD
 
