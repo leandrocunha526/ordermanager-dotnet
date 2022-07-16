@@ -70,7 +70,7 @@ Accessing `http://localhost:5000/swagger/index.html`
 ## Requirements
 
 - MySQL Server (version 8.x)
-- Dotnet (version 5.0)
+- Dotnet (version 6.0)
 - Dotnet EF (Entity Framework)
 - Vscode or Visual Studio 2019
 - Postman or Insomnia
