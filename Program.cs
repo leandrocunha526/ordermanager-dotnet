@@ -49,7 +49,11 @@ builder.Services.AddAuthentication(x =>
             var user = userService.GetById(userId);
             if (user == null)
             {
+                // return unauthorized if user no longer exists
                 context.Fail("Unauthorized");
+                context.HttpContext.Response.StatusCode = 401;
+                // Should return a task with the failure result when the user is not found
+                return Task.CompletedTask;
             }
             return Task.CompletedTask;
         }
@@ -69,22 +73,23 @@ builder.Services.AddScoped<IUserService, UserService>();
 var app = builder.Build();
 
 app.UseCors(x => x
-  .AllowAnyOrigin()
-  .AllowAnyMethod()
-  .AllowAnyHeader()
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader()
 );
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "backend v1"));
 }
 
-//app.UseHttpsRedirection();
+app.UseRouting(); // Add this line to register EndpointRoutingMiddleware
 
+// Place the UseAuthorization and UseAuthentication before UseEndpoints
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
+app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
 app.Run();

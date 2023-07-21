@@ -19,6 +19,8 @@ services:
     environment:
       - DBHOST=database
       - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - db
 
   #DataBase Service
   db:
@@ -34,11 +36,17 @@ services:
     #Specify Environment Variables for mysql
     environment:
       MYSQL_ROOT_PASSWORD: admin12345
-      MYSQL_USER: ordermanager
-      MYSQL_PASSWORD: admin12345
+      MYSQL_USER: root
       MYSQL_DATABASE: ordermanagerdb
+    networks:
+      - db
 
 #Create a volume for the my sql container.To ensure Data persists after my sql container is stopped
 volumes:
   data:
     driver: local
+
+#Create a network for the containers to communicate
+networks:
+  db:
+    driver: bridge

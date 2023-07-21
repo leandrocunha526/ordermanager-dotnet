@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using ordermanager_dotnet.Entities;
 
 namespace ordermanager_dotnet.Services

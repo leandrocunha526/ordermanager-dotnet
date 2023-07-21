@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using ordermanager_dotnet.Entities;
 using ordermanager_dotnet.Helpers;
 using ordermanager_dotnet.Data;
@@ -106,9 +103,9 @@ namespace ordermanager_dotnet.Services
 		public static bool VerifyPasswordHash(string password, byte[] storedHash, byte[] storedSalt)
 		{
 			if (password == null)
-				throw new ArgumentException("passoword");
+				throw new ArgumentException("password");
 			if (string.IsNullOrWhiteSpace(password))
-				throw new ArgumentException("Value cannot be empty or whitespace only string", "passoword");
+				throw new ArgumentException("Value cannot be empty or whitespace only string", "password");
 			using (var hmac = new System.Security.Cryptography.HMACSHA512(storedSalt))
 			{
 				var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
