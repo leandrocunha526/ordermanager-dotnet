@@ -56,7 +56,7 @@ Accessing `http://localhost:5000/swagger/index.html`
 
 ## Instructions to use Docker
 
-- [Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-5.0)
+- [Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-6.0)
 
 - [Docker images for MySQL Server](https://hub.docker.com/_/mysql)
 
@@ -90,4 +90,4 @@ See [LICENSE](LICENSE.md)
 - [Azure DevOps](https://azure.microsoft.com/pt-br/services/devops/#overview)
 - [Azure Pipelines](https://docs.microsoft.com/pt-br/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops&tabs=dotnetfive)
 
-- [Explore Microsoft Open Source projects and iniciative](https://opensource.microsoft.com/)
+- [Explore Microsoft Open Source projects and initiative](https://opensource.microsoft.com/)
