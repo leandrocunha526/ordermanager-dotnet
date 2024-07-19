@@ -90,6 +90,8 @@ app.UseRouting(); // Add this line to register EndpointRoutingMiddleware
 app.UseAuthentication();
 app.UseAuthorization();
 
+#pragma warning disable ASP0014
 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+#pragma warning restore ASP0014
 
 app.Run();
