@@ -27,7 +27,7 @@ To help manage:
 
 ## Version
 
-- Dotnet 6.0 LTS
+- Dotnet 8.0 LTS
 
 ## SGBD
 
@@ -56,7 +56,7 @@ Accessing `http://localhost:5000/swagger/index.html`
 
 ## Instructions to use Docker
 
-- [Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-6.0)
+- [Docker images for ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-8.0)
 
 - [Docker images for MySQL Server](https://hub.docker.com/_/mysql)
 
@@ -70,7 +70,7 @@ Accessing `http://localhost:5000/swagger/index.html`
 
 - MySQL Server (version 8.x)
 - MariaDB (version 10.x)
-- Dotnet (version 6.0)
+- Dotnet (version 8.0)
 - Dotnet EF (Entity Framework)
 - Visual Studio Code or Visual Studio 2019
 - Postman or Insomnia
