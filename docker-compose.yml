@@ -23,7 +23,7 @@ services:
   #DataBase Service
   db:
     #Pull the latest mysql image
-    image: mysql:8-oracle
+    image: mysql:8-ubuntu
     #Map port 3306 on the mysql container to port 3306 in the host
     ports:
       - "3306:3306"
@@ -38,7 +38,7 @@ services:
     networks:
       - db
 
-#Create a volume for the my sql container.To ensure Data persists after my sql container is stopped
+#Create a volume for the mysql container. To ensure Data persists after mysql container is stopped
 volumes:
   data:
     driver: local
