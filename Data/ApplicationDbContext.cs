@@ -6,21 +6,21 @@ namespace ordermanager_dotnet.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) {}
-        public DbSet<User> Users {get;set;}
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        public DbSet<User> Users { get; set; }
 
-        public DbSet<Manufacturer> Manufacturers {get;set;}
+        public DbSet<Manufacturer> Manufacturers { get; set; }
 
-        public DbSet<ModelMachine> ModelsMachine {get;set;}
+        public DbSet<ModelMachine> ModelsMachine { get; set; }
 
-        public DbSet<Machine> Machines {get;set;}
+        public DbSet<Machine> Machines { get; set; }
 
-        public DbSet<Employee> Employees {get;set;}
+        public DbSet<Employee> Employees { get; set; }
 
-        public DbSet<Provider> Providers {get;set;}
+        public DbSet<Provider> Providers { get; set; }
 
-        public DbSet<AgriculturalInput> AgriculturalInputs {get;set;}
+        public DbSet<AgriculturalInput> AgriculturalInputs { get; set; }
 
-        public DbSet<Order> Orders {get;set;}
+        public DbSet<Order> Orders { get; set; }
     }
 }
