@@ -74,6 +74,7 @@ Accessing `http://localhost:5000/swagger/index.html`
 - Dotnet EF (Entity Framework)
 - Visual Studio Code or Visual Studio 2019
 - Postman or Insomnia
+- Dbeaver (optional)
 
 ## LICENSE
 
