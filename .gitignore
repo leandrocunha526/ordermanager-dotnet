@@ -4,3 +4,4 @@ Migrations/
 .vscode
 tests/obj
 .vs
+global.json
