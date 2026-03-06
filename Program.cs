@@ -26,7 +26,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddCors();
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(cfg => { }, AppDomain.CurrentDomain.GetAssemblies());
 
 var appSettingsSection = builder.Configuration.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appSettingsSection);
