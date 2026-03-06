@@ -29,7 +29,7 @@ To help manage:
 
 - Dotnet 9.0 STS
 
-NOTE: The project is not compatible with Dotnet 10.0 yet, so it is recommended to use Dotnet 9.0 for now, because of the pending support for Pomelo.EntityFrameworkCore.MySql package, it is recommended to use Dotnet version 9.0 instead.
+NOTE: The project is not compatible with Dotnet 10.0 yet, so it is recommended to use Dotnet 9.0 for now, because of the pending support for Pomelo.EntityFrameworkCore.MySql package, it is recommended to use Dotnet version 9.0 instead in Dotnet 10.x.
 
 ## SGBD
 
