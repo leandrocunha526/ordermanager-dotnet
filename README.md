@@ -33,7 +33,7 @@ NOTE: The project is not compatible with Dotnet 10.0 yet, so it is recommended t
 
 ## SGBD
 
-- MySQL Server (Tested with version 8.x)
+- MySQL Server (Tested with version 8.x)  
 NOTE: MySQL Server 9.x is not compatible with Dotnet 10.0, so it is recommended to use MariaDB Server instead and the support is pending in Pomelo.EntityFrameworkCore.MySql package.
 - MariaDB Server (Tested with version 10.x and 11.x)
 
