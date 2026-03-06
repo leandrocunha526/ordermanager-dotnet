@@ -27,12 +27,12 @@ To help manage:
 
 ## Version
 
-- Dotnet 8.0 LTS
+- Dotnet 9.0 LTS
 
 ## SGBD
 
-- MySQL Server (Tested with version 8.x)
-- MariaDB Server (Tested with version 10.x)
+- MySQL Server (Tested with version 8.x) - NOTE: MySQL Server 9.x is not compatible with Dotnet 9.0, so it is recommended to use MariaDB Server instead and the support is pending in Pomelo.EntityFrameworkCore.MySql package.
+- MariaDB Server (Tested with version 10.x and 11.x)
 
 ## To run
 
@@ -69,10 +69,10 @@ Accessing `http://localhost:5000/swagger/index.html`
 ## Requirements
 
 - MySQL Server (version 8.x)
-- MariaDB (version 10.x)
-- Dotnet (version 8.0)
+- MariaDB (version 11.x)
+- Dotnet (version 9.0)
 - Dotnet EF (Entity Framework)
-- Visual Studio Code or Visual Studio 2019
+- Visual Studio Code or Visual Studio 2022
 - Postman or Insomnia
 - Dbeaver (optional)
 
