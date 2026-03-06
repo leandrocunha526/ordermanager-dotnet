@@ -29,12 +29,12 @@ To help manage:
 
 - Dotnet 9.0 STS
 
-NOTE: The project is not compatible with Dotnet 10.0 yet, so it is recommended to use Dotnet 9.0 for now, because of the pending support for Pomelo.EntityFrameworkCore.MySql package, it is recommended to use Dotnet version 9.0 instead in Dotnet 10.x.
+NOTE: The project is not compatible with Dotnet version 10.x yet, so it is recommended to use Dotnet 9.0 for now, because of the pending support for Pomelo.EntityFrameworkCore.MySql package, it is recommended to use Dotnet version 9.0 instead in Dotnet 10.x.
 
 ## SGBD
 
 - MySQL Server (Tested with version 8.x)  
-NOTE: MySQL Server 9.x is not compatible with Dotnet 10.0, so it is recommended to use MariaDB Server instead and the support is pending in Pomelo.EntityFrameworkCore.MySql package.
+NOTE: MySQL Server 9.x is not compatible with Dotnet versions 9.x and 10.x, so it is recommended to use MariaDB Server instead and the support is pending in Pomelo.EntityFrameworkCore.MySql package.
 - MariaDB Server (Tested with version 10.x and 11.x)
 
 ## To run
