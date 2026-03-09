@@ -95,3 +95,9 @@ See [LICENSE](LICENSE.md)
 - [Azure Pipelines](https://docs.microsoft.com/pt-br/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops&tabs=dotnetfive)
 
 - [Explore Microsoft Open Source projects and initiative](https://opensource.microsoft.com/)
+
+## NOTE
+
+Info
+
+The use of this API for production purposes is prohibited (in deploy); a license for AutoMapper is mandatory for this purpose, while no license is required for development and testing use. See [15.0 Upgrade Guide](https://docs.automapper.io/en/stable/15.0-Upgrade-Guide.html)
