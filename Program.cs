@@ -1,7 +1,7 @@
 using ordermanager_dotnet.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using ordermanager_dotnet.Helpers;
@@ -10,10 +10,9 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 string connectionString = builder.Configuration.GetConnectionString("Default");
-builder.Services.AddDbContext<DataContext>(options => options.UseMySql(connectionString,
-ServerVersion.AutoDetect(connectionString)));
+
+builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(connectionString));
 
 builder.Services.AddControllers().AddJsonOptions(x =>
   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
