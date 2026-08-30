@@ -1,49 +1,71 @@
-# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
 services:
-  #API service
+  # API service
   api:
     build:
       context: .
-      #Use the DockerFile in that Directory
       dockerfile: Dockerfile
-    #This Service Depends on the database service specifed above
+
     depends_on:
       - db
-    #Map port 8888 in the docker container to port 80 in the Api
+
     ports:
-      - "5000:80"
+      - "5000:8080"
+
     restart: always
-    #Specify Environment Variables for the Api Service
+
     environment:
-      - DBHOST=database
-      - ASPNETCORE_ENVIRONMENT=Development
+      ASPNETCORE_ENVIRONMENT: Development
+      DBHOST: db
+      DBPORT: 5432
+      DBNAME: ordermanagerdb
+      DBUSER: postgres
+      DBPASSWORD: admin12345
+
     networks:
       - db
 
-  #DataBase Service
+  # PostgreSQL Database service
   db:
-    #Pull the latest mysql image
-    image: mysql:8-oracle
-    #Map port 3306 on the mysql container to port 3306 in the host
+    image: postgres:17-trixie
+
     ports:
-      - "3306:3306"
-    #Specify where the persisted Data should be stored
+      - "5432:5432"
+
     volumes:
-      - data:/var/lib/mysql
+      - data:/var/lib/postgresql/data
+
     restart: always
-    #Specify Environment Variables for mysql
+
     environment:
-      MYSQL_ROOT_PASSWORD: admin12345
-      MYSQL_DATABASE: ordermanagerdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin12345
+      POSTGRES_DB: ordermanagerdb
+
     networks:
       - db
 
-#Create a volume for the my sql container.To ensure Data persists after my sql container is stopped
+  # Adminer
+  adminer:
+    image: adminer:latest
+
+    depends_on:
+      - db
+
+    ports:
+      - "8080:8080"
+
+    restart: always
+
+    networks:
+      - db
+
+# Persistent PostgreSQL data
 volumes:
   data:
     driver: local
 
-#Create a network for the containers to communicate
+# Network shared between API, PostgreSQL and Adminer
 networks:
   db:
     driver: bridge
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
