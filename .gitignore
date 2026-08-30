@@ -1,6 +1,5 @@
 bin/
 obj/
-Migrations/
 .vscode
 tests/obj
 .vs
