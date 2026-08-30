@@ -4,8 +4,6 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>ordermanager_dotnet</RootNamespace>
-    <!-- Bypass the package pruning data error -->
-    <AllowMissingPrunePackageData>true</AllowMissingPrunePackageData>
     <UserSecretsId>81f3f723-8357-4582-9650-edb3c2b80bb6</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
