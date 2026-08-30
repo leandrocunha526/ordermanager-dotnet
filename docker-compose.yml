@@ -1,5 +1,4 @@
 services:
-  # API service
   api:
     build:
       context: .
@@ -15,16 +14,14 @@ services:
 
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      DBHOST: db
-      DBPORT: 5432
-      DBNAME: ordermanagerdb
-      DBUSER: postgres
-      DBPASSWORD: admin12345
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=ordermanagerdb;Username=postgres;Password=admin12345"
+
+    volumes:
+      - dataprotection_keys:/root/.aspnet/DataProtection-Keys
 
     networks:
       - db
 
-  # PostgreSQL Database service
   db:
     image: postgres:17-trixie
 
@@ -44,7 +41,6 @@ services:
     networks:
       - db
 
-  # Adminer
   adminer:
     image: adminer:latest
 
@@ -59,13 +55,13 @@ services:
     networks:
       - db
 
-# Persistent PostgreSQL data
 volumes:
   data:
     driver: local
 
-# Network shared between API, PostgreSQL and Adminer
+  dataprotection_keys:
+    driver: local
+
 networks:
   db:
     driver: bridge
-# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
