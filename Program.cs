@@ -1,7 +1,7 @@
 using ordermanager_dotnet.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using ordermanager_dotnet.Helpers;
@@ -10,10 +10,15 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-string connectionString = builder.Configuration.GetConnectionString("Default");
-builder.Services.AddDbContext<DataContext>(options => options.UseMySql(connectionString,
-ServerVersion.AutoDetect(connectionString)));
+string connectionString =
+    builder.Configuration.GetConnectionString("Default")
+    ?? throw new InvalidOperationException(
+        "ConnectionStrings:Default not found."
+    );
+
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseNpgsql(connectionString)
+);
 
 builder.Services.AddControllers().AddJsonOptions(x =>
   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
@@ -49,7 +54,6 @@ builder.Services.AddAuthentication(x =>
             var user = userService.GetById(userId);
             if (user == null)
             {
-                // return unauthorized if user no longer exists
                 context.Fail("Unauthorized");
                 context.HttpContext.Response.StatusCode = 401;
                 // Should return a task with the failure result when the user is not found
@@ -84,9 +88,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "backend v1"));
 }
 
-app.UseRouting(); // Add this line to register EndpointRoutingMiddleware
+app.UseRouting();
 
-// Place the UseAuthorization and UseAuthentication before UseEndpoints
 app.UseAuthentication();
 app.UseAuthorization();
 
